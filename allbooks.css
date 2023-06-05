@@ -1,0 +1,430 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    
+}
+table {
+border-collapse: collapse;
+align-items: center;
+margin-left: 500px;
+margin-top: 50px; }
+td {
+border: 1px solid black;
+padding: 5px; }
+th {
+border: 1px solid black;
+padding: 5px;
+text-align: left; }
+
+h2{
+text-align: center;
+margin-left: 200px;
+font-weight: bold; }
+input[type="text"]{
+width: 22%;
+border:none;
+border-bottom: .5px solid #000;
+outline:none;
+height:20px;
+color:#000;
+background-color: #ccc;
+font-size: 15px; }
+span{
+font-weight: bold;
+font-size: 20px; }
+p{
+font-weight: bold;
+font-size: 30px; }
+.left{
+    width: 20%;
+    height: 100%;
+    background:linear-gradient(to top right, black, rgb(124, 122, 112));
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.right{
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+}
+.right .top{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(80, 95, 95, 0.932);
+}
+.right .bottom{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,rgb(226, 226, 222),rgb(223, 218, 218));
+}
+.left h2{
+    text-align: center;
+    margin-top: 60px;
+    color: goldenrod;
+}
+#pro{
+    margin-top: 40px;
+}
+.left a{
+    text-decoration: none;
+    color: rgb(134, 72, 233);
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 70px;
+    padding-top: 22px;
+    transition: 1.2s;
+    border-bottom: 2px solid #e90eb91c;
+    font-size: 17px;
+}
+.left a:hover{
+    background:linear-gradient(to right top,rgba(0, 0, 0, 0.432) 0%,rgba(99, 98, 95, 0.74) 60%);
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px 5px rgb(48, 45, 45);
+    color:rgb(250, 244, 244);
+}
+.top #log{
+    text-decoration: none;
+    color: wheat;
+    display: block;
+    background-color: rgb(145, 19, 19);
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 50px;
+    text-align: center;    
+    font-size: 15px;
+  
+}
+
+.top #log:hover{
+   color: wheat;
+   background: linear-gradient(to right top,rgba(0, 0, 0, 0.432) 0%,rgba(143, 124, 20, 0.74) 60%);
+   cursor: pointer;
+}
+
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.profile .details h2{
+    text-align:center;
+    margin-top:100px;
+	color:darkgreen;
+	
+}
+.details{
+    width: 50%;
+    height: 300px;
+    background-color: rgb(151, 144, 102);
+    border-radius: 10px;
+    padding: 40px;
+    margin-left: 250px;
+	position:relative;
+	top:100px;
+
+}
+.medicinedet{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 55px;
+}
+.medicinedet .cont{
+    width: 98%;
+    height: 80%;
+    border-radius: 10px;
+/*    background:linear-gradient(to top right, black, rgb(124, 122, 112));*/
+
+}
+
+.dk{
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+    margin-left: -120px;
+    
+}
+.dk form{
+    width: 350px;
+    height: 400px;
+    background: rgba(124, 116, 116, 0.5);
+    color: white;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 70px 30px;
+    margin-top: 700px;
+}
+.title-name{
+    margin-top: -90px;
+    margin-left: 550px;
+}
+.table_list{
+    color: black;
+    margin-right: 100px;
+    
+}
+/*.wrap{
+  top: 2%;
+  margin-left: 60%;
+  position: absolute;
+ 
+}
+.search_bar{
+   margin-left: 895px;
+}
+.search-btn{
+    margin-left: 1050px;
+    margin-top: -25px;
+}*/
+.dk button{
+    width: 150px;
+    height: 60px;
+    border-radius: 5px;
+    display: block;
+    border: none;
+    background-color: rgb(8, 127, 131);
+    color: white;
+    font-size: 15px;
+}
+.dk button:hover{
+    background-color: rgb(240, 159, 10);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.dk form input{
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(253, 249, 7, 0.452);
+    width: 200px;
+    height: 30px;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #d8fd51;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#kl{
+    width: 90px;
+    height: 40px;
+    background-color: rgb(2, 238, 238);
+    color: black;
+    font-weight: bolder;
+    border-radius: 7px;
+}
+#kl:hover{
+    cursor: pointer;
+    background-color: rgb(56, 172, 27);
+}
+.viw{
+    width: 97%;
+    height: 85%;
+    background-color: blanchedalmond;
+    border: 5px;
+    margin-left: 16px;
+    margin-top: 40px;
+    overflow: scroll;
+/*    border-radius: 8px;*/
+}
+
+.logout{
+    margin-right: 100px;
+}
+table{
+    width: 100%;
+}
+
+table tr td{
+    width: 120px;
+    padding: 9px;
+    border: 1px solid gray;
+}
+.addwalet{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+
+}
+.salary{
+    width: 48%;
+    height: 45%;
+    border-radius: 9px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction:column;
+    border: 1px solid rgba(0, 0, 0, 0.377);
+	margin-top: 40px;
+    
+}
+
+.bt:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.salary i {
+    font-size: 70px;
+    text-align: center;
+}
+.addwalet h2{
+    text-align: center;
+}
+.addwalet h1{
+    text-align: center;
+}
+.salary input{
+    background: none;
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 250px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.salary .bt{
+    background-color: goldenrod;
+    width: 100px;
+    height: 40px;
+    margin-left: 60px;
+}
+.salary .bt:hover{
+	background-color: green;
+	cursor: pointer;
+}
+#fom{
+    display: none;
+}
+
+#ma1,#ma2{
+    width: 48%;
+    height: 36%;
+}
+
+#fom input::placeholder{
+    color: black;
+}
+
+.dk1 button{
+    width: 150px;
+    height: 60px;
+    border-radius: 5px;
+    display: block;
+    border: none;
+    background-color: rgb(8, 127, 131);
+    color: white;
+    margin-left: 850px;
+    margin-top: -122px;
+    font-size: 15px;
+}
+.dk1 button:hover{
+    background-color: rgb(240, 159, 10);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.up a{
+    text-decoration: none;
+    color: wheat;
+    display: block;
+    background-color: rgb(8, 127, 131);
+    padding-top: 15px;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 50px;
+    text-align: center;    
+ 
+}
+
+.up a:hover{
+   color: wheat;
+   background: green;
+}
+
+.del a{
+    text-decoration: none;
+    color: wheat;
+    display: block;
+    background-color: red;
+    padding-top: 15px;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 50px;
+    text-align: center;    
+ 
+}
+
+.del a:hover{
+   color: black;
+   background: goldenrod;
+   
+}
+.top #h{
+/*    position: relative;*/
+    margin-right: 80px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    background-color: wheat;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 50px;
+    font-size: 15px;
+ 
+}
+.top #h:hover{
+    cursor: pointer;
+    background: black;
+    color: red;
+}
+ #allbook{
+        border:1px solid black;
+    }
+    #allbook {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      #allbook td, #allbook th {
+        border: 1px solid rgb(72, 176, 218);
+        padding: 8px;
+      }
+      
+      #allbook tr:hover {background-color: #ddd;}
+
+#allbook th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #182d3d;
+  color: white;
+}

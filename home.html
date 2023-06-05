@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Library</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;0,80
+        0;1,400;1,500; 1,700&display=swap" rel="stylesheet">
+   
+    <style type="text/css">
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        th {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            margin-left: 200px;
+            font-weight: bold;
+        }
+        span {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 30px;
+        }
+        * {
+            margin: 0;
+            padding: 0
+        }
+        .tabs {
+            overflow: hidden;
+            background-image: linear-gradient(black, black);
+        }
+        .tabs a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 20px 25px;
+            text-decoration: none;
+            font-size: 17px;
+            margin-left: 2%;
+            font-family: "Malgun Gothic", "Malgun Gothic";
+
+        }
+        .tabs .logout{
+            margin-left: 1350px;
+        }
+        .reg {
+            backface-color: linear-gradient(180deg, rgb(133, 11, 50), rgba(115, 18, 132, 255));
+        }
+        table {
+            background: rgba(0, 0, 0, 0.5);
+            color: darkkhaki;
+
+        }
+        table.scrolldown tbody,
+        table.scrolldown thead {
+            display: block;
+            
+        }
+
+        thead tr th {
+            color: white;
+        }
+
+        table.scrolldown tbody {
+            height: 50vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        tbody td,
+        thead th {
+            width: 200px;
+            border-right: 1px solid black;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        .tabs a:hover {
+            background-color: black;
+            color: rgb(133, 11, 50);
+        }
+
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: url("https://media.istockphoto.com/id/1066991874/photo/blur-school-library-or-study-room-with-book-shelves-for-education-background.jpg?s=170667a&w=0&k=20&c=TV5oMGOhnc5EWNLL4iK-ogy9uvpYuxbPxaxilVmHRG0=");
+            background-size: 280%;
+            background-position: -400px 0px;
+        }
+
+        div.main {
+            width: 400px;
+            margin: 100px auto 0px auto;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body ng-app="myModule">
+    <div class="tabs">
+        <a href="index.html">Home</a>
+        <a href="home.html">View Books</a>
+        <div class="logout">
+            <a href="#">Logout</a>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="signup-box">
+        <div ng-controller="myController">
+            <div class="container mb-3">
+                <center><span> </span>
+                <div class=" col-md-3 mb-3">
+                    <input type="text" class="form-control" ng-model="searchbookdetails"
+                        placeholder="Search Books..." />
+                </div>
+                <button class="btn btn-primary mb-3" ng-click="openForm()">Add Book</button>
+
+                <div id="bookFormModal" class="modal mb-3">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">ADD BOOKS</h5>
+                                <button type="button" style="color:red" class="close" ng-click="closeForm()">
+                                    <span>&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="id">Book ID</label>
+                                    <input type="text" class="form-control" ng-model="id" id="id">
+                                </div>
+                                <div class="form-group">
+                                    <label for="author">Author</label>
+                                    <input type="text" class="form-control" ng-model="author" id="author">
+                                </div>
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" ng-model="title" id="title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" class="form-control" ng-model="subject" id="subject">
+                                </div>
+                                <div class="form-group">
+                                    <label for="yrofpubl">Year Of Publication</label>
+                                    <input type="date" class="form-control" ng-model="yrofpubl" id="yrofpubl">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-primary mb-3" value="Add" ng-click="addbooks()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+              
+                <div class="table-container">
+                    <table class="scrolldown">
+                        <thead>
+                            <tr>
+                                <th>S.NO</th>
+                                <th>BOOK ID</th>
+                                <th>AUTHOR</th>
+                                <th>TITLE</th>
+                                <th>SUBJECT</th>
+                                <th>YEAR OF PUBLICATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="book in books | filter:searchbookdetails">
+                                <td> {{ book.sno }} </td>
+                                <td> {{ book.book_id }} </td>
+                                <td> {{ book.author }} </td>
+                                <td> {{ book.title }} </td>
+                                <td> {{ book.subject }} </td>
+                                <td> {{ book.yrofpubl}} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        var app = angular
+            .module("myModule", [])
+            .controller("myController", function ($scope) {
+                var books = [{
+                    sno: 1,
+                    book_id: 2015056,
+                    author: "The India Story",
+                    title: "Bimal Jalal",
+                    subject: "Physics",
+                    yrofpubl: "03-02-2002"
+                }, {
+                    sno: 2,
+                    book_id: 2015046,
+                    author: "Listen to Your Heart: The London Adventure",
+                    title: "Ruskin Bond",
+                    subject: "Chemistry",
+                    yrofpubl: "14-07-2003"
+                }, {
+                    sno: 3,
+                    book_id: 2015022,
+                    author: "Business of Sports: The Winning Formula for Success",
+                    title: "Vinit Karnik",
+                    subject: "Novel",
+                    yrofpubl: "17-04-1987"
+                }, {
+                    sno: 4,
+                    book_id: 2015058,
+                    author: "A Place Called Home",
+                    title: "Preeti Shenoy",
+                    subject: "Biotany",
+                    yrofpubl: "04-02-1993"
+                }, {
+                    sno: 5,
+                    book_id: 2015019,
+                    author: "Modi @20: Dreams Meeting Delivery",
+                    title: "VP Venkaiah Naidu",
+                    subject: "Novel",
+                    yrofpubl: "05-04-2004"
+                }, {
+                    sno: 6,
+                    book_id: 2015003,
+                    author: "The Struggle for Police Reforms in India",
+                    title: "Ex-IPS Prakash Singh",
+                    subject: "Motivation",
+                    yrofpubl: "05-04-2004"
+                }, {
+                    sno: 7,
+                    book_id: 2015013,
+                    author: "INDO-PAK WAR 1971- Reminiscences of Air Warriors",
+                    title: "Rajnath Singh",
+                    subject: "Autobiography",
+                    yrofpubl: "14-03-2005"
+                }, {
+                    sno: 8,
+                    book_id: 2015406,
+                    author: "Leaders, Politicians, Citizens",
+                    title: "Rasheed Kidwai",
+                    subject: "Politics",
+                    yrofpubl: "04-02-1993"
+                }, {
+                    sno: 9,
+                    book_id: 2015035,
+                    author: "Birsa Munda – Janjatiya Nayak",
+                    title: "Prof. Alok Chakrawal",
+                    subject: "CSE340",
+                    yrofpubl: "30-04-2009"
+                }, {
+                    sno: 10,
+                    book_id: 2015034,
+                    author: "Lal Salam",
+                    title: "Smriti Irani",
+                    subject: "Historic",
+                    yrofpubl: "14-03-2012"
+                },
+                {
+                    sno: 11,
+                    book_id: 2018765,
+                    author: "Pride, Prejudice and Punditry",
+                    title: "Shashi Tharoor",
+                    subject: "Historic",
+                    yrofpubl: "04-06-2002"
+                }, {
+                    sno: 12,
+                    book_id: 2015345,
+                    author: "Crunch Time: Narendra Modi’s National Security Crises",
+                    title: "Dr Sreeram Chauliahas",
+                    subject: "Politics",
+                    yrofpubl: "17-04-1987"
+                }, {
+                    sno: 13,
+                    book_id: 2015567,
+                    author: "Queen of Fire",
+                    title: "Devika Rangachari",
+                    subject: "Motivation",
+                    yrofpubl: "15-04-2003"
+                }, {
+                    sno: 14,
+                    book_id: 2015932,
+                    author: "Birsa Munda – Janjatiya Nayak",
+                    title: "Dharmendra Pradhan",
+                    subject: "Novel",
+                    yrofpubl: "06-03-1991"
+                }, {
+                    sno: 15,
+                    book_id: 2015945,
+                    author: "Decoding Indian Babudom",
+                    title: "Ashwini Shrivastava",
+                    subject: "Games",
+                    yrofpubl: "07-04-2020"
+                }, {
+                    sno: 16,
+                    book_id: 2015654,
+                    author: "The Maverick Effect",
+                    title: "Meena Nayyar & Himmat Singh Shekhawat",
+                    subject: "Science",
+                    yrofpubl: "16-08-1976"
+                }, {
+                    sno: 17,
+                    book_id: 2015432,
+                    author: "Tiger of Drass: Capt. Anuj Nayyar, 23, Kargil Hero",
+                    title: "Meena Nayyar & Himmat Singh Shekhawat",
+                    subject: "Science",
+                    yrofpubl: "14-07-2003"
+                }, {
+                    sno: 18,
+                    book_id: 2015675,
+                    author: "Hear Yourself",
+                    title: "Ashwini Shrivastava",
+                    subject: "Motivation",
+                    yrofpubl: "23-09-1999"
+                }, {
+                    sno: 19,
+                    book_id: 2015439,
+                    author: "The Boy Who Wrote a Constitution",
+                    title: "Devika Rangachari",
+                    subject: "Novel",
+                    yrofpubl: "04-06-2004"
+                }, {
+                    sno: 20,
+                    book_id: 2015674,
+                    author: "Udaan Ek Majdoor Bachhe Ki",
+                    title: "Bimal Jalal",
+                    subject: "Novel",
+                    yrofpubl: "03-02-2002"
+                },
+                ]; $scope.books = books;
+
+
+                // $scope.addbooks = [];
+                $scope.openForm = function () {
+                    document.getElementById("bookFormModal").style.display = "block";
+                }
+
+                $scope.closeForm = function () {
+                    document.getElementById("bookFormModal").style.display = "none";
+                }
+                var recordCount = Object.keys(books).length;
+                $scope.addbooks = function () {
+                    var newbook = { sno: recordCount + 1, "book_id": $scope.id, "author": $scope.author, "title": $scope.title, "subject": $scope.subject, "yrofpubl": $scope.yrofpubl };
+
+                    $scope.books.push(newbook);
+                    console.log(books);
+                    $scope.closeForm();
+
+                }
+            });
+    </script>
+</body>
+
+</html>
